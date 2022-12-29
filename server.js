@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const session = require('express-session')
 const methodOverride = require('method-override')
+const Greeks = require('./models/greek.js')
 
 //DB Config
 mongoose.connect(process.env.DATABASE_URL, {
