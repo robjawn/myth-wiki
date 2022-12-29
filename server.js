@@ -32,6 +32,8 @@ app.use(
 //Routes and Controllers
 const sessionsController = require('./controllers/sessions')
 app.use('/sessions', sessionsController)
+const usersController = require('./controllers/users')
+app.use('/users', usersController)
 
 
 //Listener
