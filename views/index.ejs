@@ -11,19 +11,17 @@
     <h1>Mythology Wiki</h1>
     <main>
         <div>
-            <h1>Categories</h1>
-            <ul>
-                <% 
-                for(let i =0; i < articles.length; i++) {
-                    let category = [...new Set(articles.map(e => e.category))]
-                    %>
-                <a href="/myths/<%=category[i]%>">
-                    <div class="categories"><%=category[i]%></div>
-                    <div>
-                    </div>                    
-               <% } %>
-            </ul>
+            <a href="/myths/new">Create New Article</a>
         </div>
+        <% articles.forEach(article => { %>
+            <li>
+                <a href="/myths/<%=article.id%>"><%=article.name %></a>
+                <form action ="/myths/<%=article.id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE" />
+                </form>
+                <a href="/myths/<%=article.id%>">Edit</a>
+            </li>
+        <% }) %>
     </main>
 </body>
 </html>

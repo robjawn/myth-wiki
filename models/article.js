@@ -4,15 +4,15 @@ const Schema = mongoose.Schema
 
 //article Schema
 const articleSchema = new Schema({
-    category: String,
-    name: String,
-    type: String,
+    category: { type: String, required: true },
+    name: { type: String, required: true },
+    type: { type: String, required: true },
     img: 
     {
         data: Buffer,
         contentType: String,
     },
-    description: String,
+    description: { type: String, required: true },
 })
 
 //Model

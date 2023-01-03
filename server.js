@@ -65,11 +65,13 @@ app.get('/myths', (req, res) => {
 
 //New
 app.get('/myths/new', (req, res) => {
-        res.render('new.ejs')
+        res.render('new.ejs', {
+            currentUser: req.session.currentUser
+        })
 })
 
 //Delete
-app.get('/myths/:id', (req, res) => {
+app.delete('/myths/:id', (req, res) => {
     Article.findByIdAndDelete(req.params.id, (err, data) => {
         res.redirect('/myths')
     })
@@ -94,6 +96,7 @@ app.get('/myths/:id/edit', (req, res) => {
         Article.findById(req.params.id, (error, foundArticle) => {
             res.render('edit.ejs', {
                 article: foundArticle,
+                currentUser: req.session.currentUser
             })
         })
 })
@@ -107,8 +110,9 @@ app.post('/myths', (req, res) => {
 
 //show
 app.get('/myths/:id', (req, res) => {
-    Article.findById(req.params.type, (err, foundArticle) => {
+    Article.findById(req.params.id, (err, foundArticle) => {
         res.render("show.ejs", {
+            currentUser: req.session.currentUser,
             article: foundArticle,
         })
     })
