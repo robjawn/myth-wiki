@@ -17,7 +17,7 @@
                 for(let i =0; i < myths.length; i++) {
                     let category = [...new Set(myths.map(e => e.category))]
                     %>
-                <a href="/categories/<%=[i]%>">
+                <a href="/<%=category[i]%>">
                     <div class="categories"><%=category[i]%></div>
                     <div>
                     </div>                    

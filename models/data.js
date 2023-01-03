@@ -1,4 +1,4 @@
-const myths = [
+module.exports = [
 {
     category: "Greek",
     name: "Zeus",
@@ -85,4 +85,3 @@ const myths = [
 },
 ]
 
-module.exports = myths
