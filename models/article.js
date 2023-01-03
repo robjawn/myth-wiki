@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 
 //article Schema
 const articleSchema = new Schema({
+    category: String,
     name: String,
     type: String,
     img: 

@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const session = require('express-session')
 const methodOverride = require('method-override')
-const Olympians = require('./models/greek.js')
+const myths = require('./models/myths.js')
 
 //DB Config
 mongoose.connect(process.env.DATABASE_URL, {
@@ -39,11 +39,13 @@ app.use('/users', usersController)
 app.get('/', (req, res) => {
     if (req.session.currentUser) {
         res.render('dashboard.ejs', {
-            currentUser: req.session.currentUser
+            currentUser: req.session.currentUser,
+            myths: myths
         })
     } else {
         res.render('index.ejs', {
-            currentUser: req.session.currentUser
+            currentUser: req.session.currentUser,
+            myths: myths
         })
     }
 })
