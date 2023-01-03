@@ -9,5 +9,21 @@
 <body>
     <%- include('../partials/nav.ejs') %>
     <h1>Home</h1>
+    <main>
+        <div>
+            <h1>Categories</h1>
+            <ul>
+                <% 
+                for(let i =0; i < myths.length; i++) {
+                    let category = [...new Set(myths.map(e => e.category))]
+                    %>
+                <a href="/myths/<%=i%>">
+                    <div class="categories"><%=category[i]%></div>
+                    <div>
+                    </div>                    
+               <% } %>
+            </ul>
+        </div>
+    </main>
 </body>
 </html>
