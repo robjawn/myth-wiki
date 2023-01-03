@@ -7,18 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <%- include('../partials/nav.ejs') %>
-    <h1>Home</h1>
+    <%- include('../../partials/nav.ejs') %>
     <main>
         <div>
             <h1>Categories</h1>
             <ul>
                 <% 
                 for(let i =0; i < myths.length; i++) {
-                    let category = [...new Set(myths.map(e => e.category))]
+                    let category = [...new Set(myths.map(e => e.type))]
                     %>
-                <a href="/categories/<%=[i]%>">
-                    <div class="categories"><%=category[i]%></div>
+                <a href="/myths/<%=i%>">
+                    <div class="types"><%=category[i]%></div>
                     <div>
                     </div>                    
                <% } %>

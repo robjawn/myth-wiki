@@ -5,7 +5,8 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const session = require('express-session')
 const methodOverride = require('method-override')
-const myths = require('./models/myths.js')
+const myths = require('../models/myths.js')
+const categoriesRouter = express.Router()
 
 //DB Config
 mongoose.connect(process.env.DATABASE_URL, {
@@ -30,31 +31,26 @@ app.use(
     })
 )
 
-//Routes and Controllers
-const sessionsController = require('./controllers/sessions')
+//Controllers
+const sessionsController = require('../controllers/sessions')
 app.use('/sessions', sessionsController)
-const usersController = require('./controllers/users')
+const usersController = require('../controllers/users')
 app.use('/users', usersController)
-const categoriesController = require('./controllers/categories')
-app.use('/categories', categoriesController)
 
-//Main Index
-app.get('/', (req, res) => {
+//Route
+categoriesRouter.get('/:id', (req, res) => {
     if (req.session.currentUser) {
-        res.render('dashboard.ejs', {
+        res.render('./categories/dashboard.ejs', {
             currentUser: req.session.currentUser,
             myths: myths
         })
     } else {
-        res.render('index.ejs', {
+        res.render('./categories/index.ejs', {
             currentUser: req.session.currentUser,
             myths: myths
         })
     }
 })
 
-//Listener
-const PORT = process.env.PORT
-app.listen(PORT, () => console.log('server is listening'))
-
-
+//Export
+module.exports = categoriesRouter
