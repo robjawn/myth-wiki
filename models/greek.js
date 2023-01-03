@@ -1,4 +1,4 @@
-module.exports = [
+const olympians = [
 {
     id: "001",
     name: "Zeus",
@@ -84,3 +84,5 @@ module.exports = [
     description: "God of wealth, trade, thieves, and travelers."
 },
 ]
+
+module.exports = olympians
