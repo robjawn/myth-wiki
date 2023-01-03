@@ -6,12 +6,8 @@ const Schema = mongoose.Schema
 const articleSchema = new Schema({
     category: { type: String, required: true },
     name: { type: String, required: true },
-    type: { type: String, required: true },
-    img: 
-    {
-        data: Buffer,
-        contentType: String,
-    },
+    type: { type: String },
+    img: {type: String},
     description: { type: String, required: true },
 })
 

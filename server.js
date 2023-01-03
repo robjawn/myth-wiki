@@ -22,7 +22,7 @@ db.on('disconnected', () => console.log('disconnected from mongo'))
 
 //Middleware
 app.use(methodOverride('_method'))
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: false }))
 app.use(
     session({
         secret: process.env.SECRET,
@@ -86,7 +86,7 @@ app.put('/myths/:id', (req, res) => {
             new: true
         },
         (error, updatedArticle) => {
-            res.redirect(`/${req.params.id}`)
+            res.redirect(`/myths/${req.params.id}`)
         }
     )
 })

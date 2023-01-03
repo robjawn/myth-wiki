@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <form class="edit" action="/myths/<%=article._id%>?_method=PUT" method="POST">
+        Article name: <input type="text" name="name" value="<%=article.name%>"/> 
+    </br>
+        Category: <input type="text" name="category" value="<%=article.category%>"/>
+    </br>
+        Type/sub-category (optional):<input type="text" name="type" value="<%=article.type%>"/>
+    </br>
+        Image URL (optional): <input type="text" name="img" value="<%=article.img%>"/>
+    </br>
+        Article Content: <input id="new-text-content" type="text" name="description" value="<%=article.description%>"/>   
+    <br>
+    <input type="submit" value="Submit Changes"/>
+    </form>
+</body>
+</html>

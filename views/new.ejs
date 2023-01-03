@@ -7,6 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <%- include('../partials/nav.ejs')  %>
+    <h1>Create an Article</h1>
+    <form class="new" action="/myths" method="POST">
+        Article name: <input type="text" name="name"/> 
+    </br>
+        Category: <input type="text" name="category"/>
+    </br>
+        Type/sub-category (optional):<input type="text" name="type"/>
+    </br>
+        Image URL (optional): <input type="text" name="img"/>
+    </br>
+        Article Content: <input id ="new-text-content" type="text" name="description"/>   
+    <br>
+    <input type="submit" value="Add Article to Wiki"/>
+    </form>
 </body>
 </html>

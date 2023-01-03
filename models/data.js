@@ -3,7 +3,7 @@ module.exports = [
     category: "Greek",
     name: "Zeus",
     type: "Olympian",
-    img: "https://www.greekmythology.com/images/mythology/zeus_large_image_1.jpg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Jupiter_J1a.jpg/800px-Jupiter_J1a.jpg",
     description: "God of the sky and thunder, Zeus is the ruler and father of all Olympian and humanity.",
 },
 {

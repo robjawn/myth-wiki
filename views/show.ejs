@@ -8,13 +8,15 @@
 </head>
 <body>
     <%- include('../partials/nav.ejs') %>
-    <div>
+    <div class="banner">
         <h1><%=article.name%></h1>
-        <img src=<%=article.img%>/>
+        <img src='<%=article.img%>'/>
         <h3><%=article.type%></h3>
     </div>
-    <textarea>
+    <div class="main">
+        <p>
         <%=article.description%>
-    </textarea>
+        </p>
+    </div>
 </body>
 </html>
