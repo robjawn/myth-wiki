@@ -10,7 +10,24 @@
 
 <body>
 	<%- include('../partials/nav.ejs')  %>
-	<h1>Dashboard</h1>
+	<h1>Mythology Wiki</h1>
+    <main>
+        <div>
+            <h1>Categories</h1>
+            <ul>
+                <% 
+                for(let i =0; i < articles.length; i++) {
+                    let category = [...new Set(articles.map(e => e.category))]
+                    %>
+                <a href="/<%=i%>">
+                    <div class="categories"><%=category[i]%></div>
+                    <div>
+                    </div>                    
+               <% } %>
+            </ul>
+        </div>
+    </main>
 </body>
+</html>
 
 </html>

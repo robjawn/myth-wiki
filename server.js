@@ -41,13 +41,13 @@ app.use('/users', usersController)
 app.get('/seed', (req, res) => {
     Article.deleteMany({}, (err) => {
         Article.create(data, (err) => {
-            res.redirect('/')
+            res.redirect('/myths')
         })
     })
 })
 
 //Index
-app.get('/', (req, res) => {
+app.get('/myths', (req, res) => {
     Article.find({}, (error, allArticles) => {
         if (req.session.currentUser) {
             res.render('dashboard.ejs', {
@@ -64,23 +64,19 @@ app.get('/', (req, res) => {
 })
 
 //New
-app.get('/new', (req, res) => {
-    if (req.session.currentUser) {
+app.get('/myths/new', (req, res) => {
         res.render('new.ejs')
-    } else {
-        res.redirect('/users/new')
-    }
 })
 
 //Delete
-app.get('/:id', (req, res) => {
+app.get('/myths/:id', (req, res) => {
     Article.findByIdAndDelete(req.params.id, (err, data) => {
-        res.redirect('/')
+        res.redirect('/myths')
     })
 })
 
 //Update
-app.put('/:id', (req, res) => {
+app.put('/myths/:id', (req, res) => {
     Article.findByIdAndUpdate(
         req.params.id,
         req.body,
@@ -94,9 +90,25 @@ app.put('/:id', (req, res) => {
 })
 
 //edit
-app.get('/:id/edit', (req, res) => {
-    Article.findById(req.params.id, (error, foundArticle) => {
-        res.render('edit.ejs', {
+app.get('/myths/:id/edit', (req, res) => {
+        Article.findById(req.params.id, (error, foundArticle) => {
+            res.render('edit.ejs', {
+                article: foundArticle,
+            })
+        })
+})
+
+//create
+app.post('/myths', (req, res) => {
+    Article.create(req.body, (error, createdArticle) => {
+        res.redirect('/myths')
+    })
+})
+
+//show
+app.get('/myths/:id', (req, res) => {
+    Article.findById(req.params.type, (err, foundArticle) => {
+        res.render("show.ejs", {
             article: foundArticle,
         })
     })

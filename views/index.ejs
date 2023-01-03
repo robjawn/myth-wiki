@@ -8,16 +8,16 @@
 </head>
 <body>
     <%- include('../partials/nav.ejs') %>
-    <h1>Home</h1>
+    <h1>Mythology Wiki</h1>
     <main>
         <div>
             <h1>Categories</h1>
             <ul>
                 <% 
-                for(let i =0; i < myths.length; i++) {
-                    let category = [...new Set(myths.map(e => e.category))]
+                for(let i =0; i < articles.length; i++) {
+                    let category = [...new Set(articles.map(e => e.category))]
                     %>
-                <a href="/<%=category[i]%>">
+                <a href="/myths/<%=category[i]%>">
                     <div class="categories"><%=category[i]%></div>
                     <div>
                     </div>                    

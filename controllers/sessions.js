@@ -14,7 +14,7 @@ sessionsRouter.get('/new', (req, res) => {
 //Delete (log out)
 sessionsRouter.delete('/', (req, res) => {
     req.session.destroy((error) => {
-        res.redirect('/')
+        res.redirect('/myths')
     })
 })
 
@@ -29,7 +29,7 @@ sessionsRouter.post('/', (req, res) => {
             const passwordMatches = bcrypt.compareSync(req.body.password, foundUser.password)
             if (passwordMatches) {
                 req.session.currentUser = foundUser
-                res.redirect('/')
+                res.redirect('/myths')
             } else {
                 res.send('Invalid Password')
             }
