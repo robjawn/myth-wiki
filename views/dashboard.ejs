@@ -3,13 +3,19 @@
     <%- include('./partials/head.ejs') %>
 <body>
 	<%- include('./partials/nav.ejs')  %>
-	<h1>Mythology Wiki</h1>
-    <main>
-        <% articles.forEach(article => { %>
-            <li>
-                <a href="/<%=article.id%>"><%=article.name %></a>
-            </li>
-        <% }) %>
+	<h1 class="category-title">Greek Mythology</h1>
+    <h3 class="type-title">Olympians</h3>
+    <main class="main-index">
+        <ul>
+            <% articles.forEach(article => { %>
+                <li class="index-article">
+                    <a href="/<%=article.id%>">
+                        <img id="index-img" src="<%=article.img%>">
+                        <%=article.name%>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
     </main>
 </body>
 </html>
