@@ -1,0 +1,19 @@
+<div id="nav">
+    <h2 id="title-text">Myth Wiki</h2>
+    <% if(currentUser) { %>
+    <ul>
+        <li><a href="/">Home</a></li>
+            <li>
+                <form action="/sessions?_method=DELETE" method="POST">
+                    <input type="submit" value="Log Out">
+                </form>
+            </li>
+    </ul>
+    <% } else { %>
+	<ul>
+        <li><a href="/">Home</a></li>
+	    <li><a href="/users/new">Register</a></li>
+	    <li><a href="/sessions/new">Login</a></li>
+    </ul>
+    <% } %>
+</div>

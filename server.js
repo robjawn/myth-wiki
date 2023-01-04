@@ -30,6 +30,7 @@ app.use(
         saveUninitialized: false
     })
 )
+app.use(express.static('public'))
 
 //Routes and Controllers
 const sessionsController = require('./controllers/sessions')
@@ -41,7 +42,7 @@ app.use('/users', usersController)
 app.get('/seed', (req, res) => {
     Article.deleteMany({}, (err) => {
         Article.create(data, (err) => {
-            res.redirect('/myths')
+            res.redirect('/')
         })
     })
 })
@@ -111,9 +112,9 @@ app.post('/', (req, res) => {
 //show
 app.get('/:id', (req, res) => {
     Article.findById(req.params.id, (err, foundArticle) => {
-        res.render("show.ejs", {
-            currentUser: req.session.currentUser,
+        res.render('show.ejs', {
             article: foundArticle,
+            currentUser: req.session.currentUser
         })
     })
 })

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs') %>
+<%- include('./partials/head.ejs') %>
 <body>
-    <%- include('../partials/nav.ejs') %>
+    <%- include('./partials/nav.ejs') %>
     <form class="edit" action="/<%=article._id%>?_method=PUT" method="POST">
         Article name: <input type="text" name="name" value="<%=article.name%>"/> 
     </br>
