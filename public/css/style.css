@@ -5,7 +5,7 @@
 	margin: 0 0 1em 0;
 	padding: 0;
 	background-color: #f6cd45;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid black;
     display: inline-flex;
   }
 #nav ul {
@@ -23,14 +23,14 @@
 	text-decoration: none;
 	font-weight: bold;
 	color: black;
-	border-right: 1px solid #ccc; 
+	border-right: 1px solid black; 
 }
 #nav li form {
     display: flex;
 	text-decoration: none;
 	font-weight: bold;
 	color: black;
-	border-right: 1px solid #ccc;
+	border-right: 1px solid black;
     float: right;
 }
 #nav li form input {
@@ -39,14 +39,14 @@
     font-weight: bold;
     color: black;
     background-color:  #f6cd45;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid black;
     border: none;
     font-family: 'GFS Neohellenic';
     font-size: 16px;
 }
-#nav li:first-child a {
-	border-left: 1px solid #ccc; 
-}
+/* #nav li:first-child a {
+	/* border-left: 1px solid black;  */
+/* } */ 
 #nav li a:hover {
 	color: #c00;; 
 }
@@ -60,7 +60,8 @@
 
 
 body {
-    font-family: 'GFS Neohellenic'
+    font-family: 'GFS Neohellenic';
+    text-decoration: none;
 }
 
 /* BODY  */
@@ -72,7 +73,7 @@ body::before {
     height: 100%;
     width: 100%;
     z-index: -1;
-    background: var(--color-darkblue);
+    background: #f6cd45;
     background-image: linear-gradient(
         115deg,
         rgba(226, 115, 25, 0.8),
