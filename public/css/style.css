@@ -1,29 +1,64 @@
+/* NAV BAR STYLING */
 #nav {
 	width: 100%;
 	float: left;
 	margin: 0 0 1em 0;
 	padding: 0;
-	background-color: #f2f2f2;
-	border-bottom: 1px solid #ccc;  }
+	background-color: #f6cd45;
+	border-bottom: 1px solid #ccc;
+    display: inline-flex;
+  }
 #nav ul {
 	list-style: none;
 	width: 800px;
-	margin: 0 auto;
-	padding: 0; }
+	padding: 0; 
+    align-items: right;
+}
 #nav li {
-	float: left; }
+	float: right;
+ }
 #nav li a {
 	display: block;
 	padding: 8px 15px;
 	text-decoration: none;
 	font-weight: bold;
 	color: #069;
-	border-right: 1px solid #ccc; }
+	border-right: 1px solid #ccc; 
+}
+#nav li form {
+    display: flex;
+	text-decoration: none;
+	font-weight: bold;
+	color: #069;
+	border-right: 1px solid #ccc;
+    float: right;
+}
+#nav li form input {
+    text-decoration: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    color: #069;
+    border-right: 1px solid #ccc;
+    border: none;
+    font-family: 'GFS Neohellenic';
+    font-size: 16px;
+}
 #nav li:first-child a {
-	border-left: 1px solid #ccc; }
+	border-left: 1px solid #ccc; 
+}
 #nav li a:hover {
 	color: #c00;
-	background-color: #fff; }
+	background-color: #fff; 
+}
+#nav li form input:hover {
+    cursor: pointer;
+    color: #c00;
+    background-color: #ffff;
+}
+#nav h2 {
+    margin-left: 20px;
+}
+
 
 body {
     font-family: 'GFS Neohellenic'
