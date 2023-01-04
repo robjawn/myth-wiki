@@ -12,20 +12,11 @@
 	<%- include('../partials/nav.ejs')  %>
 	<h1>Mythology Wiki</h1>
     <main>
-        <div>
-            <h1>Categories</h1>
-            <ul>
-                <% 
-                for(let i =0; i < articles.length; i++) {
-                    let category = [...new Set(articles.map(e => e.category))]
-                    %>
-                <a href="/<%=i%>">
-                    <div class="categories"><%=category[i]%></div>
-                    <div>
-                    </div>                    
-               <% } %>
-            </ul>
-        </div>
+        <% articles.forEach(article => { %>
+            <li>
+                <a href="/myths/<%=article.id%>"><%=article.name %></a>
+            </li>
+        <% }) %>
     </main>
 </body>
 </html>

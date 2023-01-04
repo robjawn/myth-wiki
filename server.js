@@ -50,12 +50,12 @@ app.get('/seed', (req, res) => {
 app.get('/myths', (req, res) => {
     Article.find({}, (error, allArticles) => {
         if (req.session.currentUser) {
-            res.render('dashboard.ejs', {
+            res.render('index.ejs', {
                 currentUser: req.session.currentUser,
                 articles: allArticles,
             })
         } else {
-            res.render('index.ejs', {
+            res.render('dashboard.ejs', {
                 currentUser: req.session.currentUser,
                 articles: allArticles,
             })
