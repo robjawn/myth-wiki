@@ -47,7 +47,7 @@ app.get('/seed', (req, res) => {
 })
 
 //Index
-app.get('/myths', (req, res) => {
+app.get('/', (req, res) => {
     Article.find({}, (error, allArticles) => {
         if (req.session.currentUser) {
             res.render('index.ejs', {
@@ -64,21 +64,21 @@ app.get('/myths', (req, res) => {
 })
 
 //New
-app.get('/myths/new', (req, res) => {
+app.get('/new', (req, res) => {
         res.render('new.ejs', {
             currentUser: req.session.currentUser
         })
 })
 
 //Delete
-app.delete('/myths/:id', (req, res) => {
+app.delete('/:id', (req, res) => {
     Article.findByIdAndDelete(req.params.id, (err, data) => {
-        res.redirect('/myths')
+        res.redirect('/')
     })
 })
 
 //Update
-app.put('/myths/:id', (req, res) => {
+app.put('/:id', (req, res) => {
     Article.findByIdAndUpdate(
         req.params.id,
         req.body,
@@ -86,13 +86,13 @@ app.put('/myths/:id', (req, res) => {
             new: true
         },
         (error, updatedArticle) => {
-            res.redirect(`/myths/${req.params.id}`)
+            res.redirect(`/${req.params.id}`)
         }
     )
 })
 
 //edit
-app.get('/myths/:id/edit', (req, res) => {
+app.get('/:id/edit', (req, res) => {
         Article.findById(req.params.id, (error, foundArticle) => {
             res.render('edit.ejs', {
                 article: foundArticle,
@@ -102,14 +102,14 @@ app.get('/myths/:id/edit', (req, res) => {
 })
 
 //create
-app.post('/myths', (req, res) => {
+app.post('/', (req, res) => {
     Article.create(req.body, (error, createdArticle) => {
-        res.redirect('/myths')
+        res.redirect('/')
     })
 })
 
 //show
-app.get('/myths/:id', (req, res) => {
+app.get('/:id', (req, res) => {
     Article.findById(req.params.id, (err, foundArticle) => {
         res.render("show.ejs", {
             currentUser: req.session.currentUser,

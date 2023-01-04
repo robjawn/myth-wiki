@@ -11,15 +11,15 @@
     <h1>Mythology Wiki</h1>
     <main>
         <div>
-            <a href="/myths/new">Create New Article</a>
+            <a href="/new">Create New Article</a>
         </div>
         <% articles.forEach(article => { %>
             <li>
-                <a href="/myths/<%=article.id%>"><%=article.name %></a>
-                <form action ="/myths/<%=article.id %>?_method=DELETE" method="POST">
+                <a href="/<%=article.id%>"><%=article.name %></a>
+                <form action ="/<%=article.id %>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE" />
                 </form>
-                <a href="/myths/<%=article.id%>/edit">Edit</a>
+                <a href="/<%=article.id%>/edit">Edit</a>
             </li>
         <% }) %>
     </main>

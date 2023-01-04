@@ -8,7 +8,7 @@
 </head>
 <body>
     <%- include('../partials/nav.ejs') %>
-    <form class="edit" action="/myths/<%=article._id%>?_method=PUT" method="POST">
+    <form class="edit" action="/<%=article._id%>?_method=PUT" method="POST">
         Article name: <input type="text" name="name" value="<%=article.name%>"/> 
     </br>
         Category: <input type="text" name="category" value="<%=article.category%>"/>
