@@ -166,3 +166,29 @@ main {
     padding: 10px;
     margin-left: 25%;
 }
+
+/* new.ejs */
+
+#login-box {
+    background-color: rgba(27, 27, 50, 0.8);
+    border: 3px solid #f7b02e;
+    color: #f7b02e;
+    width: 30%;
+    height:auto;
+    padding: 50px;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+#register-box {
+    background-color: rgba(27, 27, 50, 0.8);
+    border: 3px solid #f7b02e;
+    color: #f7b02e;
+    width: 30%;
+    height:auto;
+    padding: 50px;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+}
