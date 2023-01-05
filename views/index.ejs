@@ -3,20 +3,25 @@
     <%- include('./partials/head.ejs') %>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <h1>Greek Mythology</h1>
-    <main>
-        <div>
-            <a href="/new">Create New Article</a>
-        </div>
+    <h1 class="category-title">Greek Mythology</h1>
+    <h3 class="category-title">Olympians</h3>
+    <main class="main-index">
+        <ul>
         <% articles.forEach(article => { %>
-            <li>
-                <a href="/<%=article.id%>"><%=article.name %></a>
-                <form action ="/<%=article.id %>?_method=DELETE" method="POST">
+            <li class="index-article">
+                <a href="/<%=article.id%>">
+                    <img id="index-img" src="<%=article.img%>">
+                    <p><%=article.name%></p>
+                </a>
+                <a class="edit" href="/<%=article.id%>/edit">
+                    <p>Edit</p>
+                </a>
+                <form action="/<%=article.id %>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE" />
                 </form>
-                <a href="/<%=article.id%>/edit">Edit</a>
             </li>
         <% }) %>
+        </ul>
     </main>
 </body>
 </html>

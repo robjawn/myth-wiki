@@ -3,7 +3,7 @@
 <%- include('./partials/head.ejs') %>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <form class="edit" action="/<%=article._id%>?_method=PUT" method="POST">
+    <form class="new" action="/<%=article._id%>?_method=PUT" method="POST">
         Article name: <input type="text" name="name" value="<%=article.name%>"/> 
     </br>
         Category: <input type="text" name="category" value="<%=article.category%>"/>
@@ -12,7 +12,7 @@
     </br>
         Image URL (optional): <input type="text" name="img" value="<%=article.img%>"/>
     </br>
-        Article Content: <input id="new-text-content" type="text" name="description" value="<%=article.description%>"/>   
+        Article Content: <textarea id="new-text-content" name="description" rows="4" cols="200"><%=article.description%></textarea>
     <br>
     <input type="submit" value="Submit Changes"/>
     </form>

@@ -2,10 +2,15 @@
     <h2>Myth Wiki</h2>
     <% if(currentUser) { %>
     <ul>
-        <li><a href="/">Home</a></li>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/new">Create New Article</a>
+        </li>
             <li>
                 <form action="/sessions?_method=DELETE" method="POST">
-                    <input type="submit" value="Log Out">
+                    <input id="destroy" type="submit" value="Log Out">
                 </form>
             </li>
     </ul>
